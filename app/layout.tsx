@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import LeftSidebar from "@/components/layout/LeftSidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className="flex flex-col xl:flex-row min-h-screen relative">
+          {/* left sidebar - fixed */}
+          <div className="w-full xl:w-140 xl:fixed xl:top-0 xl:left-0 xl:h-screen bg-blue-200 overflow-y-auto">
+            <LeftSidebar />
+          </div>
+          {/* main or right - with margin to account for fixed sidebar */}
+          <div className="flex-1 xl:ml-140">{children}</div>
+        </div>
+      </body>
     </html>
   );
 }

@@ -1,5 +1,7 @@
+import TravelArticles from "@/components/TravelArticles";
+
 const ArticlesPage = () => {
-  return <div>ArticlesPage</div>;
+  return <TravelArticles header="All travel stories" />;
 };
 
 export default ArticlesPage;
