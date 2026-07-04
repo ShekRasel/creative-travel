@@ -1,19 +1,27 @@
 export default function TravelMarquee() {
   const items = [
-    "✈️ Explore Hidden Destinations",
-    "🏝️ Island Escapes & Beaches",
-    "🗺️ Plan Your Next Adventure",
-    "🏔️ Mountain Treks & Nature Trails",
-    "🌆 City Break Inspirations",
-    "🚂 Scenic Travel Routes",
+    { icon: "✈️", text: "Explore Hidden Destinations" },
+    { icon: "🏝️", text: "Island Escapes & Beaches" },
+    { icon: "🗺️", text: "Plan Your Next Adventure" },
+    { icon: "🏔️", text: "Mountain Treks & Nature Trails" },
+    { icon: "🌆", text: "City Break Inspirations" },
+    { icon: "🚂", text: "Scenic Travel Routes" },
   ];
 
   return (
-    <div className="overflow-hidden py-4 mt-24">
-      <div className="flex w-max animate-marquee gap-12 whitespace-nowrap text-lg font-medium text-[#0055D4]">
-        {[...items, ...items].map((text, i) => (
-          <span key={i} className="flex items-center gap-2">
-            {text}
+    <div className="relative overflow-hidden py-3 border-t border-stone-700/50">
+      {/* Subtle gradient masks for fade effect */}
+      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-stone-800 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-stone-800 to-transparent z-10 pointer-events-none" />
+
+      <div className="flex w-max animate-marquee gap-10 whitespace-nowrap">
+        {[...items, ...items].map((item, i) => (
+          <span
+            key={i}
+            className="flex items-center gap-2 text-sm font-light tracking-wide text-white/60"
+          >
+            <span className="text-amber-400/80 text-base">{item.icon}</span>
+            {item.text}
           </span>
         ))}
       </div>

@@ -7,9 +7,8 @@ const HomePage = () => {
   return (
     <main className="min-h-screen bg-stone-100">
       <HeroSection />
-      {/* <TravelArticles header="Letest Travels Stories" />
-      <UpcomingItinerary /> */}
-
+      <TravelArticles header="Letest Travels Stories" />
+      <UpcomingItinerary />
       <SiteFooter />
     </main>
   );

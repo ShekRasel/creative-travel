@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <div className="h-175 w-full flex items-center justify-center px-4 sticky top-0 z-0">
+    <div className="h-screen w-full flex items-center justify-center px-4 sticky top-0 z-0 relative">
       <Image
         src="/images/desert2.webp"
         alt="Desert picture"
@@ -30,7 +30,7 @@ const HeroSection = () => {
         </h2>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center font-medium">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center font-medium text-white mix-blend-difference">
         <span>Scroll for more</span>
         <span className="mt-1 animate-bounce">↓</span>
       </div>

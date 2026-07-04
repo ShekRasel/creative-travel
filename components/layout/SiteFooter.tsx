@@ -1,52 +1,100 @@
+import Link from "next/link";
 
 const SiteFooter = () => {
   return (
-    <footer className="bg-[#e7e5e4] py-16 md:py-20 px-4 md:px-8 text-[#1c1c1a] z-50">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Main heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
-          End of the trail
-        </h2>
+    <footer className="relative bg-stone-900 text-stone-300 py-12 md:py-16 px-6 md:px-10 overflow-hidden">
+      {/* Subtle top border */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
 
-        {/* Sub-text */}
-        <p className="text-xl md:text-2xl text-[#4a4a46] italic mt-2">
-          Less rush. <br className="sm:hidden" /> More wonder.
-        </p>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        {/* Brand */}
+        <div className="space-y-3">
+          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight">
+            The Roam Report
+          </h2>
+          <p className="text-sm text-stone-400 max-w-xs leading-relaxed">
+            Less rush. <br className="sm:hidden" /> More wonder.
+          </p>
+        </div>
 
-        {/* Navigation links */}
-        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-8 text-sm md:text-base font-medium text-[#4a4a46]">
-          <a
-            href="#"
-            className="hover:text-[#1c1c1a] transition-colors duration-200"
+        {/* Navigation */}
+        <nav className="flex flex-col space-y-2 text-sm">
+          <h3 className="text-xs uppercase tracking-wider text-stone-500 font-semibold mb-1">
+            Explore
+          </h3>
+
+          <Link
+            href="/"
+            className="hover:text-amber-400 transition-colors duration-200"
           >
             Home
-          </a>
-          <a
-            href="#"
-            className="hover:text-[#1c1c1a] transition-colors duration-200"
+          </Link>
+
+          <Link
+            href="/articles"
+            className="hover:text-amber-400 transition-colors duration-200"
           >
             Articles
-          </a>
-          <a
-            href="#"
-            className="hover:text-[#1c1c1a] transition-colors duration-200"
+          </Link>
+
+          <Link
+            href="/about"
+            className="hover:text-amber-400 transition-colors duration-200"
           >
             About
-          </a>
-          <a
+          </Link>
+
+          <Link
             href="#"
-            className="hover:text-[#1c1c1a] transition-colors duration-200"
+            className="hover:text-amber-400 transition-colors duration-200"
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
-        {/* Social / Action Icons */}
+        {/* Social & Copyright */}
+        <div className="space-y-4">
+          <h3 className="text-xs uppercase tracking-wider text-stone-500 font-semibold">
+            Follow
+          </h3>
 
-        {/* Copyright */}
-        <p className="text-sm text-[#6b6b67] mt-8 border-t border-[#d0cec8] pt-8 max-w-xs mx-auto">
-          Copyright ©2025 · The Roam Report
-        </p>
+          <div className="flex gap-4">
+            <Link
+              href="https://x.com"
+              aria-label="Twitter"
+              className="text-stone-400 hover:text-amber-400 transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* SVG */}
+            </Link>
+
+            <Link
+              href="https://instagram.com"
+              aria-label="Instagram"
+              className="text-stone-400 hover:text-amber-400 transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* SVG */}
+            </Link>
+
+            <Link
+              href="https://youtube.com"
+              aria-label="YouTube"
+              className="text-stone-400 hover:text-amber-400 transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* SVG */}
+            </Link>
+          </div>
+
+          <p className="text-xs text-stone-500 border-t border-stone-800 pt-4">
+            &copy; {new Date().getFullYear()} The Roam Report. All rights
+            reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -30,12 +30,12 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <div className="flex flex-col xl:flex-row min-h-screen relative">
-          {/* left sidebar - fixed */}
-          <div className="w-full xl:w-140 xl:fixed xl:top-0 xl:left-0 xl:h-screen bg-blue-200 overflow-y-auto">
+          {/* left sidebar - fixed on large screens */}
+          <div className="w-full xl:w-140 xl:fixed xl:top-0 xl:left-0 xl:h-screen bg-blue-200 overflow-y-auto z-20">
             <LeftSidebar />
           </div>
-          {/* main or right - with margin to account for fixed sidebar */}
-          <div className="flex-1 xl:ml-140">{children}</div>
+          {/* main content – offset on large screens */}
+          <div className="flex-1 xl:ml-140 bg-stone-100">{children}</div>
         </div>
       </body>
     </html>

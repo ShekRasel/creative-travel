@@ -38,17 +38,14 @@ const UpcomingItinerary = () => {
 
   return (
     <section className="relative bg-[#5F6D3B] py-16 md:py-20 px-4 md:px-8 overflow-hidden">
-      <div className="max-w-6xl mx-auto  z-10">
-        {/* Header */}
+      <div className="max-w-6xl mx-auto z-10">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-[#86a538] mb-12 md:mb-16 tracking-tight text-center">
           Upcoming itinerary
         </h2>
 
-        {/* 2‑column grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
           {itineraries.map((item) => (
-            <div key={item.id} className="">
-              {/* Image */}
+            <div key={item.id} className="group">
               <div className="relative w-full aspect-[4/3] bg-[#e8e6e1] rounded-2xl overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-[1.02]">
                 <Image
                   src={item.image}
@@ -58,8 +55,6 @@ const UpcomingItinerary = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-
-              {/* Text content */}
               <div>
                 <span className="text-3xl md:text-4xl lg:text-5xl font-light text-[#d4d2cc] block leading-none">
                   {item.number}
@@ -70,7 +65,7 @@ const UpcomingItinerary = () => {
                 <p className="text-sm md:text-base font-medium text-[#8a8a86] mt-0.5">
                   {item.date}
                 </p>
-                <p className="text-sm md:text-base text-[#6b6b67] mt-0.5 leading-relaxed">
+                <p className="text-sm md:text-base mt-0.5 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -79,7 +74,6 @@ const UpcomingItinerary = () => {
         </div>
       </div>
 
-      {/* Decorative bottom curve */}
       <div className="absolute bottom-0 left-0 right-0 z-0">
         <svg
           viewBox="0 0 1440 80"

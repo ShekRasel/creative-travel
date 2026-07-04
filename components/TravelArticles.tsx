@@ -12,19 +12,17 @@ const TravelArticles = ({ header }: { header: string }) => {
   return (
     <div className="container py-8 bg-stone-100 relative z-20 pt-10">
       <div className="mx-auto bg-stone-100 relative z-20 md:max-w-4xl border-black">
-        <h1 className="text-4xl font-semibold text-gray-800 mb-8 text-center z-50">
+        <h1 className="text-3xl sm:text-4xl font-semibold text-gray-800 mb-8 text-center z-50">
           {header}
         </h1>
 
-        {/* article list */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {displayArticles.map((article) => (
             <div
               key={article.id}
               className="bg-white overflow-hidden duration-300 cursor-pointer border p-6 hover:scale-105 ease-in-out transition-all"
             >
-              {/* Image */}
-              <div className="relative h-48 w-full rounded-2xl overflow-hidden  border-red-500">
+              <div className="relative h-48 w-full rounded-2xl overflow-hidden">
                 <Image
                   src={article.image}
                   alt={article.title}
@@ -33,7 +31,6 @@ const TravelArticles = ({ header }: { header: string }) => {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-4 bg-white pt-10">
                 <h2 className="text-base text-gray-500 text-center">
                   {article.date}
@@ -48,7 +45,7 @@ const TravelArticles = ({ header }: { header: string }) => {
 
         {!matched && (
           <div className="mt-10 flex items-center justify-center">
-            <Link href={"/articles"} className=" underline text-black">
+            <Link href={"/articles"} className="underline text-black">
               View All Articles
             </Link>
           </div>
