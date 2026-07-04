@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <div className="flex flex-col xl:flex-row min-h-screen relative">
           {/* left sidebar - fixed on large screens */}
           <div className="w-full xl:w-140 xl:fixed xl:top-0 xl:left-0 xl:h-screen bg-blue-200 overflow-y-auto z-20">
